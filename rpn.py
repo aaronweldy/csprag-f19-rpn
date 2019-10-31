@@ -2,7 +2,7 @@
 
 import operator, string
 
-ops = {'+': operator.add, '-': operator.sub, '*': operator.mul, '/': operator.truediv}
+ops = {'+': operator.add, '-': operator.sub, '*': operator.mul, '/': operator.truediv, '^': operator.pow}
 
 def calculate(arg):
     st = []
@@ -11,7 +11,7 @@ def calculate(arg):
             y,x = st.pop(), st.pop()
             z = ops[sign](x,y)
         else: 
-            z = float(sign)
+            z = int(sign)
         st.append(z)
     return(st.pop())        
 def main():
