@@ -1,13 +1,8 @@
 #!/usr/bin/env python3
 
-import operator
+import operator, string
 
 ops = {'+': operator.add, '-': operator.sub, '*': operator.mul, '/': operator.truediv, '^': operator.pow}
-WELCOME_MESSAGE = (
-    "Welcome to the RPN calculator!\n"
-    "Why do RPN calculators stay so calm? "
-    "Because they always know how to handle their operators."
-)
 
 def calculate(arg):
     st = []
@@ -18,18 +13,11 @@ def calculate(arg):
         else: 
             z = int(sign)
         st.append(z)
-    return(st.pop())
-
-
-def get_welcome_message():
-    return WELCOME_MESSAGE
-
-
+    return(st.pop())        
 def main():
-    print(get_welcome_message())
-    while True:
+    while True: 
         calculate(input("rpn calc> "))
-
+        
 
 if __name__ == '__main__':
     main()
