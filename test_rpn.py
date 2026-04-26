@@ -11,3 +11,9 @@ class TestBasics(unittest.TestCase):
         self.assertEqual(2, result) 
         result = rpn.calculate("3 3 ^")
         self.assertEqual(27, result)
+
+    def test_welcome_message_includes_joke(self):
+        message = rpn.get_welcome_message()
+
+        self.assertIn("Welcome to the RPN calculator!", message)
+        self.assertIn("handle their operators", message)
